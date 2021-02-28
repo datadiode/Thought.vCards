@@ -62,49 +62,49 @@ namespace Tests {
         
         internal static byte[] Outlook2007 {
             get {
-                object obj = ResourceManager.GetObject("Outlook2007", resourceCulture);
+                object obj = ResourceManager.GetObject("Outlook2007");
                 return ((byte[])(obj));
             }
         }
         
         internal static byte[] OutlookCertificate {
             get {
-                object obj = ResourceManager.GetObject("OutlookCertificate", resourceCulture);
+                object obj = ResourceManager.GetObject("OutlookCertificate");
                 return ((byte[])(obj));
             }
         }
         
         internal static byte[] OutlookSimple {
             get {
-                object obj = ResourceManager.GetObject("OutlookSimple", resourceCulture);
+                object obj = ResourceManager.GetObject("OutlookSimple");
                 return ((byte[])(obj));
             }
         }
         
         internal static byte[] PalmAgentSamples {
             get {
-                object obj = ResourceManager.GetObject("PalmAgentSamples", resourceCulture);
+                object obj = ResourceManager.GetObject("PalmAgentSamples");
                 return ((byte[])(obj));
             }
         }
         
         internal static byte[] RfcAuthors {
             get {
-                object obj = ResourceManager.GetObject("RfcAuthors", resourceCulture);
+                object obj = ResourceManager.GetObject("RfcAuthors");
                 return ((byte[])(obj));
             }
         }
         
         internal static byte[] UnicodeNameSample {
             get {
-                object obj = ResourceManager.GetObject("UnicodeNameSample", resourceCulture);
+                object obj = ResourceManager.GetObject("UnicodeNameSample");
                 return ((byte[])(obj));
             }
         }
         
         internal static byte[] XPalmWithPhoto {
             get {
-                object obj = ResourceManager.GetObject("XPalmWithPhoto", resourceCulture);
+                object obj = ResourceManager.GetObject("XPalmWithPhoto");
                 return ((byte[])(obj));
             }
         }
