@@ -10,7 +10,11 @@ namespace Tests
     [TestFixture]
     public class vCardPhotoTests
     {
-
+        static vCardPhotoTests()
+        {
+            // Accept TLS 1.0, 1.1, 1.2
+            System.Net.ServicePointManager.SecurityProtocol = (System.Net.SecurityProtocolType)(192 | 768 | 3072);
+        }
         /// <summary>
         ///     The URL of an image that is under control of the author
         ///     and is sufficiently small to allow quick download.  If you
@@ -19,22 +23,22 @@ namespace Tests
         ///     local network.  This will save bandwidth costs for the author.
         /// </summary>
         private const string TestPhotoUrl =
-            "http://www.thoughtproject.com/Common/Download.gif";
+            "https://github.com/eaksi/publicdomainicons/raw/master/folder_open.png";
 
         /// <summary>
         ///     The height of the test image in pixels.
         /// </summary>
-        private const int TestPhotoHeight = 16;
+        private const int TestPhotoHeight = 32;
 
         /// <summary>
         ///     The size (in bytes) of the test image.
         /// </summary>
-        private const int TestPhotoSize = 579;
+        private const int TestPhotoSize = 796;
 
         /// <summary>
         ///     The width of the test photo in pixels.
         /// </summary>
-        private const int TestPhotoWidth = 16;
+        private const int TestPhotoWidth = 32;
 
         // 
 
@@ -58,38 +62,36 @@ namespace Tests
 
         #region [ Constructor_String_Empty ]
 
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void Constructor_String_Empty()
         {
-            vCardPhoto photo = new vCardPhoto(string.Empty);
+            Assert.That(() => {
+                vCardPhoto photo = new vCardPhoto(string.Empty);
+            }, Throws.TypeOf<ArgumentNullException>());
         }
 
         #endregion
 
         #region [ Constructor_String_Null ]
 
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void Constructor_String_Null()
         {
-            vCardPhoto photo = new vCardPhoto((string)null);
+            Assert.That(() => {
+                vCardPhoto photo = new vCardPhoto((string)null);
+            }, Throws.TypeOf<ArgumentNullException>());
         }
 
         #endregion
 
         #region [ Constructor_Uri_Null ]
 
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void Constructor_Uri_Null()
         {
-            new vCardPhoto((Uri)null);
-
-            // The following expression is nicer but seems
-            // to not work nice in VS2008 depending on
-            // debugging/exception settings.
-
-            //Assert.Throws<ArgumentNullException>(
-            //    () => new vCardPhoto((Uri)null)
-            //);
+            Assert.That(() => {
+                new vCardPhoto((Uri)null);
+            }, Throws.TypeOf<ArgumentNullException>());
         }
 
         #endregion

@@ -1432,7 +1432,7 @@ namespace Thought.vCards
                 }
                 else
                 {
-                    builder.Append('=');
+                    //builder.Append('=');
                     //builder.Append(v.ToString("X2"));
                     var char_Bytes = System.Text.Encoding.UTF8.GetBytes(new char[] { c });
                     foreach (var char_byte in char_Bytes)

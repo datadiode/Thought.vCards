@@ -451,15 +451,15 @@ namespace Tests
 
         #region [ EncodeProperty_Null ]
 
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void EncodeProperty_Null()
         {
+            Assert.That(() => {
+                vCardStandardWriter writer =
+                    new vCardStandardWriter();
 
-            vCardStandardWriter writer =
-                new vCardStandardWriter();
-
-            writer.EncodeProperty(null);
-
+                writer.EncodeProperty(null);
+            }, Throws.TypeOf<ArgumentNullException>());
         }
 
         #endregion

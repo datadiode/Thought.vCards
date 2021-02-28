@@ -437,7 +437,9 @@ namespace Tests.Samples
                new StreamReader(new MemoryStream(SampleCards.UnicodeNameSample)));
 
             Assert.NotNull(card);
-            Assert.AreEqual("³ÂÀö¾ý", card.GivenName);
+            // https://itpro.cz/juniconv/
+            // https://onlineutf8tools.com/convert-utf8-to-bytes
+            Assert.AreEqual("\u9648\u4E3D\u541B", card.GivenName);
         }
 
         #endregion

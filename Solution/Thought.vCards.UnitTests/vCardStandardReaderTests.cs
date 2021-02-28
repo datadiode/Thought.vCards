@@ -195,10 +195,12 @@ namespace Tests
 
         #region [ DecodeHexadecimal_BadCharacter ]
 
-        [Test, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [Test]
         public void DecodeHexadecimal_BadCharacter()
         {
-            vCardStandardReader.DecodeHexadecimal('V');
+            Assert.That(() => {
+                vCardStandardReader.DecodeHexadecimal('V');
+            }, Throws.TypeOf<ArgumentOutOfRangeException>());
         }
 
         #endregion
@@ -340,11 +342,13 @@ namespace Tests
 
         #region [ ReadProperty_String_EmptyParameter ]
 
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void ReadProperty_String_EmptyParameter()
         {
-            vCardStandardReader reader = new vCardStandardReader();
-            reader.ReadProperty(string.Empty);
+            Assert.That(() => {
+                vCardStandardReader reader = new vCardStandardReader();
+                reader.ReadProperty(string.Empty);
+            }, Throws.TypeOf<ArgumentNullException>());
         }
 
         #endregion
@@ -386,11 +390,13 @@ namespace Tests
 
         #region [ ReadProperty_String_NullParameter ]
 
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void ReadProperty_String_NullParameter()
         {
-            vCardStandardReader reader = new vCardStandardReader();
-            reader.ReadProperty((string)null);
+            Assert.That(() => {
+                vCardStandardReader reader = new vCardStandardReader();
+                reader.ReadProperty((string)null);
+            }, Throws.TypeOf<ArgumentNullException>());
         }
 
         #endregion

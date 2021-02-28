@@ -12,29 +12,30 @@ namespace Tests
 
         #region [ Add_Name_Empty ]
 
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void Add_Name_Empty()
         {
+            Assert.That(() => {
+                vCardSubpropertyCollection subs =
+                    new vCardSubpropertyCollection();
 
-            vCardSubpropertyCollection subs =
-                new vCardSubpropertyCollection();
-
-            subs.Add(string.Empty);
-
+                subs.Add(string.Empty);
+            }, Throws.TypeOf<ArgumentNullException>());
         }
 
         #endregion
 
         #region [ Add_Name_Null ]
 
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void Add_Name_Null()
         {
+            Assert.That(() => {
+                vCardSubpropertyCollection subs =
+                    new vCardSubpropertyCollection();
 
-            vCardSubpropertyCollection subs =
-                new vCardSubpropertyCollection();
-
-            subs.Add((string)null);
+                subs.Add((string)null);
+            }, Throws.TypeOf<ArgumentNullException>());
 
         }
 
@@ -241,30 +242,30 @@ namespace Tests
 
         #region [ GetValue_Name_Empty ]
 
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void GetValue_Name_Empty()
         {
+            Assert.That(() => {
+                vCardSubpropertyCollection subs =
+                    new vCardSubpropertyCollection();
 
-            vCardSubpropertyCollection subs =
-                new vCardSubpropertyCollection();
-
-            subs.GetValue(string.Empty);
-
+                subs.GetValue(string.Empty);
+            }, Throws.TypeOf<ArgumentNullException>());
         }
 
         #endregion
 
         #region [ GetValue_Name_Null ]
 
-        [Test, ExpectedException(typeof(ArgumentNullException))]
+        [Test]
         public void GetValue__Name_Null()
         {
+            Assert.That(() => {
+                vCardSubpropertyCollection subs =
+                    new vCardSubpropertyCollection();
 
-            vCardSubpropertyCollection subs =
-                new vCardSubpropertyCollection();
-
-            subs.GetValue((string)null);
-
+                subs.GetValue((string)null);
+            }, Throws.TypeOf<ArgumentNullException>());
         }
 
         #endregion
