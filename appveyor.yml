@@ -1,0 +1,23 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+
+configuration:
+- Debug
+- Release
+
+platform: Any CPU
+
+test: off
+
+environment:
+  EnableNuGetPackageRestore: true
+
+before_build:
+- nuget restore Solution\vCards.sln
+
+build_script:
+- for /f "tokens=1,* delims=-" %%a in ('"git describe --tags --long"') do set version_suffix=%%b
+- dotnet build MsgReader.sln --version-suffix "%version_suffix%-%CONFIGURATION%"
+
+artifacts:
+- path: Solution\Thought.vCards\bin\$(configuration)\*.nupkg
